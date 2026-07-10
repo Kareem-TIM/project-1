@@ -5,6 +5,7 @@ const studentTable = document.getElementById("studentTable");
 const studentform = document.getElementById("studentForm");
 const tbody = document.querySelector("tbody");
 const submitButton = studentform.querySelector("button[type='submit']");
+const viewDiv = document.getElementById("div-view");
 let editingRow = null;
 let id = tbody.rows.length;
 
@@ -51,10 +52,18 @@ studentform.addEventListener("submit", function(event) {
 
 var viewStudent = function(button) {
     const row = button.closest("tr");
+    const rowId = row.cells[0].textContent;
     const name = row.cells[1].textContent;
     const age = row.cells[2].textContent;
     const grade = row.cells[3].textContent;
-    const viewDiv = document.getElementById("div-view");
+
+    if (viewDiv.dataset.currentId === rowId) {
+        viewDiv.innerHTML = "";
+        delete viewDiv.dataset.currentId;
+        return;
+    }
+
+    viewDiv.dataset.currentId = rowId;
     viewDiv.innerHTML = `
         <h3>Student Details</h3>
         <p><strong>Name:</strong> ${name}</p>
@@ -74,6 +83,7 @@ var editStudent = function(button) {
 
 var deleteStudent = function(button) {
     const row = button.closest("tr");
+    viewDiv.innerHTML = "";
     row.remove();
 };
 
