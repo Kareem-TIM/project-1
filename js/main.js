@@ -37,7 +37,7 @@ studentform.addEventListener("submit", function(event) {
             <td>${++id}</td>
             <td>${name}</td>
             <td>${age}</td>
-            <td>${grade}</td>
+            <td>${grade}%</td>
             <td>
                 <button class="btn btn-info btn-sm" onclick="viewStudent(this)">View</button>
                 <button class="btn btn-warning btn-sm" onclick="editStudent(this)">Edit</button>
