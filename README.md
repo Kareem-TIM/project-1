@@ -36,12 +36,14 @@ No build tools or package manager are required. Simply open the project in a bro
 2. Open `index.html` in your web browser.
 
 ## Usage
+![Student management system usage](images/screenshot.png)
 
 1. Enter the student's name, age, and grade.
 2. Click the **Add** button to add the student to the table.
 3. Use the **View** button to display student details below the table.
 4. Use the **Edit** button to load student data into the form for updates.
 5. Use the **Delete** button to remove a student from the table.
+
 
 ## Project Structure
 
