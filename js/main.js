@@ -11,7 +11,7 @@ let id = 0;
 
 async function fetchStudents() {
     try {
-        const response = await fetch(`${{ vars.APILINK }}`);
+        const response = await fetch("https://studens-api-pyfastapi-beige.vercel.app/students");
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
